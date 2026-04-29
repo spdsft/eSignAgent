@@ -1,0 +1,4 @@
+# Runtime dependencies for the eSignAgent native host.
+# Kept minimal — everything else is stdlib (ctypes, struct, json, etc.).
+
+asn1crypto>=1.5.1   # CMS/PKCS#7 SignedData construction

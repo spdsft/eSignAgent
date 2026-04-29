@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "eSignAgent",
+  "short_name": "eSignAgent",
+  "version": "1.0.1",
+  "description": "Open-source PDF digital signing client for web applications.",
+  "_comment_key": "Locks the extension ID to aoonbefkefmhoicoceilifnngkenmfah regardless of install mode (Load unpacked vs .crx). Derived from the project's signing .pem.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuPsUEYIDZT5Ixbx3cjhyxTV/f5YggNFgr+kUGO8I4NK08LQFvqu7hM0iIp9rAZgGQSzFlwZZGqQnH54NBIHYcmZSCvVYbuQ41gvqcKaAJkPfDx2g5BunLDF0cgrStOtiT2MyctTWaGMOXq1ZTZjD+A5xvEVUesA2dCrb8fMXQVswDH92PspxCKoKmAFynxLUslasOE18GvXKiDqDqww4s9rfyRz+k9Do2RXACaBBEu24j5bxfOPc8ZtcB518Uc1F2ZaHhifR+kKEvlM/pYZQZ19b4Pwhr1JzKA/AGTAc2pvmO3a3n+ZsnA26VlnG1GrUqUeu+nqB5YLPo7l4ArBxgwIDAQAB",
+
+  "icons": {
+    "16":  "icons/icon-16.png",
+    "32":  "icons/icon-32.png",
+    "48":  "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "_comment_matches": "Default matches cover localhost development. Forks should add their own production domains under content_scripts.matches and host_permissions, then rebuild the .crx.",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost/*",
+        "https://localhost/*",
+        "http://127.0.0.1/*",
+        "https://127.0.0.1/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "world": "ISOLATED"
+    },
+    {
+      "matches": [
+        "http://localhost/*",
+        "https://localhost/*",
+        "http://127.0.0.1/*",
+        "https://127.0.0.1/*"
+      ],
+      "js": ["page-bridge.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+
+  "permissions": [
+    "nativeMessaging"
+  ],
+
+  "host_permissions": [
+    "http://localhost/*",
+    "https://localhost/*",
+    "http://127.0.0.1/*",
+    "https://127.0.0.1/*"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "com.esignagent.host",
+  "description": "eSignAgent native host",
+  "path": "{HOST_EXE_PATH}",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://{EXTENSION_ID}/"
+  ]
+}

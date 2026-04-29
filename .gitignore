@@ -1,0 +1,80 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Build artefacts
+build/
+dist/
+*.egg-info/
+*.egg
+*.spec
+!installer.iss
+!*.iss
+
+# PyInstaller
+*.manifest
+
+# Coverage / testing
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+
+# --- Node / browser extension build (if added later) ---
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
+
+# --- Inno Setup / Windows ---
+installer/windows/dist/
+*.bin
+Output/
+
+# --- Browser extension packaged artefacts ---
+# We commit source under extension/ but never the packed .crx or its private key
+*.crx
+*.pem
+*.zip
+
+# Firefox unsigned XPI build outputs
+*.xpi
+
+# --- macOS notarization (Phase 2) ---
+*.dmg
+*.pkg
+*.app/
+
+# --- IDE / editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Logs (host runtime logs end up in %LOCALAPPDATA%, not here, but just in case) ---
+*.log
+logs/
+
+# --- Secrets ---
+.env
+.env.local
+secrets/
+.secrets/
+*.pem
+*.p12
+*.pfx
+github-pat
+*.token

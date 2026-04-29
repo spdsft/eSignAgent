@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Chrome / Edge enterprise extension update manifest.
+
+  Hosted at: https://github.com/<TAROM-ORG>/justpilot-signer/releases/download/v{VERSION}/update.xml
+  (or any other stable HTTPS URL — same URL must stay valid forever)
+
+  Substitute placeholders before publishing:
+    {EXTENSION_ID}       — 32-char Chrome extension ID (from `chrome.exe --pack-extension`)
+    {VERSION}            — semver (must match manifest.json's "version")
+    {CRX_DOWNLOAD_URL}   — direct HTTPS URL to the .crx file
+-->
+<gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
+  <app appid='{EXTENSION_ID}'>
+    <updatecheck codebase='{CRX_DOWNLOAD_URL}' version='{VERSION}' />
+  </app>
+</gupdate>
